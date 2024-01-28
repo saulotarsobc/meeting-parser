@@ -1,6 +1,6 @@
 # JW Meeting Parser
 
-![Alt text](./imgs/image.png)
+![Alt text](image.png)
 
 ```
 
