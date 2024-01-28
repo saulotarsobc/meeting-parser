@@ -2,15 +2,6 @@
 
 ![Alt text](image.png)
 
-```
-
-## Build e Start
-
-```sh
-npm run build;
-npm start
-```
-
 ## Como usar?
 
 > Faça uma requisição POST com o campo 'content' com o texto a seguir...
