@@ -58,7 +58,20 @@ export class MwbService {
     return yourself;
   }
 
-  getLiving() {}
+  getLiving() {
+    const start = this.content.indexOf('NOSSA VIDA CRISTÃ');
+    const section = this.content.substring(start).split('\n');
+
+    const living: string[] = [];
+
+    section.map((line, index) => {
+      if (this.startWithNum.test(line)) {
+        living.push(`${line} - ${section[index + 1].match(this.times)[0]}`);
+      }
+    });
+
+    return living;
+  }
 
   async parser(cnt: string) {
     this.content = cnt;

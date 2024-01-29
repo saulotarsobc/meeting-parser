@@ -37,6 +37,10 @@ content="..."
         "4. Iniciando conversas - (2 min)",
         "5. Cultivando o interesse - (5 min)",
         "6. Discurso - (5 min)"
+    ],
+    "linving": [
+        "7. Observar a criação nos ajuda a não nos concentrar em nós mesmos - (15 min)",
+        "8. Estudo bíblico de congregação - (30 min)"
     ]
 }
 ```
