@@ -29,18 +29,48 @@ content="..."
         "biblicalBasis": "JÓ 38-39"
     },
     "treasures": [
-        "1. Você tira tempo para observar a criação? - (10 min)",
-        "2. Joias espirituais - (10 min)",
-        "3. Leitura da Bíblia - (4 min) Jó 39:1-22 (th lição 5)"
+        {
+            "title": "1. Você tira tempo para observar a criação?",
+            "duration": "(10 min)"
+        },
+        {
+            "title": "2. Joias espirituais",
+            "duration": "(10 min)"
+        },
+        {
+            "title": "3. Leitura da Bíblia",
+            "duration": "(4 min)",
+            "description": "Jó 39:1-22 (th lição 5)"
+        }
     ],
     "yourself": [
-        "4. Iniciando conversas - (2 min)",
-        "5. Cultivando o interesse - (5 min)",
-        "6. Discurso - (5 min)"
+        {
+            "title": "4. Iniciando conversas",
+            "duration": "(2 min)",
+            "description": "TESTEMUNHO INFORMAL. Termine a conversa de uma forma bondosa ao perceber que a pessoa não quer conversar. (lmd lição 2 ponto 3)"
+        },
+        {
+            "title": "5. Cultivando o interesse",
+            "duration": "(5 min)",
+            "description": "DE CASA EM CASA. Numa conversa anterior, a pessoa contou para você que perdeu alguém querido recentemente. (lmd lição 9 ponto 3)"
+        },
+        {
+            "title": "6. Discurso",
+            "duration": "(5 min)",
+            "description": "lmd apêndice A ponto 1 — Tema: Os acontecimentos mundiais e a atitude das pessoas indicam que uma mudança está próxima. (th lição 16)"
+        }
     ],
     "linving": [
-        "7. Observar a criação nos ajuda a não nos concentrar em nós mesmos - (15 min)",
-        "8. Estudo bíblico de congregação - (30 min)"
+        {
+            "title": "7. Observar a criação nos ajuda a não nos concentrar em nós mesmos",
+            "duration": "(15 min)",
+            "description": "Consideração."
+        },
+        {
+            "title": "8. Estudo bíblico de congregação",
+            "duration": "(30 min)",
+            "description": "bt cap. 4 §§ 13-20"
+        }
     ]
 }
 ```
