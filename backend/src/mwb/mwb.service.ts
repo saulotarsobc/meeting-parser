@@ -1,13 +1,15 @@
 import { Injectable } from '@nestjs/common';
+import { Part } from 'src/@types';
 
 @Injectable()
 export class MwbService {
   content: string = '';
 
   // regex
-  singNumber: RegExp = /.*Cântico\s(\d+)/;
-  times: RegExp = /(\(\d+\s\w+\))/;
-  startWithNum: RegExp = /^\d\.\s/;
+  singNumber: RegExp = /.*Cântico\s(\d+)/gm;
+  times: RegExp = /(\(\d+\s\w+\))/gm;
+  startWithNum: RegExp = /^\d\.\s/gm;
+  description: RegExp = /\(\d+\s\w+\)\s(.+)/gm;
 
   toLines() {
     return this.content.split('\n');
@@ -31,11 +33,15 @@ export class MwbService {
     const end = this.content.indexOf('FAÇA SEU MELHOR NO MINISTÉRIO');
     const section = this.content.substring(start, end).split('\n');
 
-    const treasures: string[] = [];
+    const treasures: Part[] = [];
 
     section.map((line, index) => {
       if (/^\d\.\s/.test(line)) {
-        treasures.push(`${line} - ${section[index + 1]}`);
+        treasures.push({
+          title: line,
+          duration: section[index + 1].match(this.times)[0],
+          description: section[index + 1].split(this.description)[1],
+        });
       }
     });
 
@@ -47,11 +53,15 @@ export class MwbService {
     const end = this.content.indexOf('NOSSA VIDA CRISTÃ');
     const section = this.content.substring(start, end).split('\n');
 
-    const yourself: string[] = [];
+    const yourself: Part[] = [];
 
     section.map((line, index) => {
       if (this.startWithNum.test(line)) {
-        yourself.push(`${line} - ${section[index + 1].match(this.times)[0]}`);
+        yourself.push({
+          title: line,
+          duration: section[index + 1].match(this.times)[0],
+          description: section[index + 1].split(this.description)[1],
+        });
       }
     });
 
@@ -62,11 +72,15 @@ export class MwbService {
     const start = this.content.indexOf('NOSSA VIDA CRISTÃ');
     const section = this.content.substring(start).split('\n');
 
-    const living: string[] = [];
+    const living: Part[] = [];
 
     section.map((line, index) => {
       if (this.startWithNum.test(line)) {
-        living.push(`${line} - ${section[index + 1].match(this.times)[0]}`);
+        living.push({
+          title: line,
+          duration: section[index + 1].match(this.times)[0],
+          description: section[index + 1].split(this.description)[1],
+        });
       }
     });
 
